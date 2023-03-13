@@ -1,25 +1,49 @@
-import logo from './logo.svg';
+import React from "react";
+import { Route, BrowserRouter as Router, Routes, Navigate } from "react-router-dom";
+import styled from "styled-components";
 import './App.css';
+import Header from "./components/Header";
+import { Dashboard } from "./pages/Dashboard";
+import Inventory from "./pages/inventory";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+        <Header />
+        <Container>
+          <Routes>
+                <Route
+                  exact
+                  path="/dashboard"
+                  element={<Dashboard/>}
+                />
+                <Route
+                  exact
+                  path="/inventory"
+                  element={<Inventory/>}
+                />
+
+                <Route path="/" element={<Navigate replace to="/dashboard" />} />
+                <Route
+                    path="*"
+                    element={
+                      <div className="not-found">
+                        <h2>404 Page not found</h2>
+                      </div>
+                    }
+                  />
+          </Routes>
+        </Container>
+    </Router>
   );
 }
 
 export default App;
+
+
+const Container = styled.div`
+    height: 100%;
+    position: relative;
+    top: 11vh;
+
+`
