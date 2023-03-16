@@ -1,0 +1,24 @@
+/* Global color scheme */
+:root {
+    --primary-color: #FF6C59;
+    --secondary-color: #17c7bd;
+    --dark-primary: #ff1d00;
+    --dark-sky: #55a09c;
+    --text-color: #333333;
+    --accent: #61CE70;
+    --dark-accent: #23A455;
+    --white: #ffffff;
+    --orange: orange;
+    --cyan-gray: #abb8c3;
+    --black: #000000;
+    --font-family: 'Roboto', sans-serif;
+}
+
+  .active-link {
+     color: var(--dark-accent);
+  }
+
+  a, a:hover {
+    color: var(--text-color);
+    text-decoration: none;
+  }

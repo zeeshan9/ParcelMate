@@ -2,17 +2,16 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-
+import sadapayLogo from '../assets/imgs/sadapay.png';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [burgerStatus, setBurgerStatus] = useState(false);
 
-    
-  
     return (
     <Container>
       <a href="dashboard">
-        <img src='/images/logo.svg' alt='logo'/>
+        <Img src={sadapayLogo} alt='logo'/>
       </a>
       <Menu>
 
@@ -21,8 +20,8 @@ const Header = () => {
             <a href='#'>Model3</a> */}
       </Menu>
       <RightMenu>
-          <a href="dashboard">Dashbaord</a>
-          <a href="inventory">inventory</a>
+          {/* <Link to="dashboard" activeClassName="active-link" >Dashbaord</Link>
+          <Link to="dashboard" activeClassName="active-link" >Inventory</Link> */}
           <CustomMenu onClick={() => setBurgerStatus(true)}/>
       </RightMenu>
       <BurgerNav show={burgerStatus}>
@@ -30,9 +29,9 @@ const Header = () => {
            <CustomClose onClick={() => setBurgerStatus(false)}/>
         </CloseWrapper>
 
-        <li><a herf="#">Existing Inventory</a></li>
-        <li><a herf="#">Used Inventory</a></li>
-        <li><a herf="#">Trade-in</a></li>
+        <li><Link to="dashboard"  >Dashbaord</Link></li>
+        <li><Link to="inventory"  >Existing Inventory</Link></li>
+        <li><Link to="offers"  >Discount Offers</Link></li>
       </BurgerNav>
     </Container>
   )
@@ -40,6 +39,9 @@ const Header = () => {
 
 export default Header;
 
+const Img = styled.img`
+  height: 2.5rem;
+`
 const Container = styled.div`
   z-index: 1;
   min-height: 60px;
@@ -88,7 +90,7 @@ const BurgerNav = styled.div`
   top: 0;
   bottom: 0;
   right: 0;
-  background: white;
+  background-color: whitesmoke;
   width: 300px;
   z-index: 10;
   list-style: none;
@@ -116,6 +118,11 @@ const CloseWrapper = styled.div`
   justify-content: flex-end;
 `
 
-const Redirect = styled.a`
-  text-underline: none
-`
+// const Navigate = styled(Link)`
+//   color: var(--primary-color);
+//   text-decoration: none;
+//   &:hover {
+//     text-decoration: none;
+//     color: var(--dark-primary)
+//   }
+// `

@@ -9,7 +9,7 @@ const Home = () => {
           title="Model S"
           backgroundImg="model-s.jpg"
           discription="Order Online for Touchless Drivery"
-          leftBtnText="Custom Order"
+          leftBtnText="offers"
           rightBtnText="Existing Inventory"
         />
         {/* <Section 
@@ -54,5 +54,4 @@ export default Home
 
 const Container = styled.div`
     height: 100vh;
-
 `

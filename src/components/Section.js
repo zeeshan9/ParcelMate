@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Section = ({title, discription, leftBtnText, rightBtnText, backgroundImg}) => {
@@ -11,12 +12,12 @@ const Section = ({title, discription, leftBtnText, rightBtnText, backgroundImg})
         <Buttons>
                 <ButtonGroup>
                     <LeftButton>
-                        { leftBtnText }
+                        <Link to="/offers">{ leftBtnText }</Link>
                     </LeftButton>
-                        { rightBtnText && 
-                    <RightButton>
-                        { rightBtnText }
-                    </RightButton>
+                    { rightBtnText && 
+                        <RightButton>
+                            <Link to="/inventory">{ rightBtnText }</Link>
+                        </RightButton>
                     }
                 </ButtonGroup>
             {/* <DownArrow src='/images/down-arrow.svg'>
