@@ -10,9 +10,9 @@ const Header = () => {
 
     return (
     <Container>
-      <a href="dashboard">
+      <Link to="dashboard">
         <Img src={sadapayLogo} alt='logo'/>
-      </a>
+      </Link>
       <Menu>
 
             {/* <a href='#'>ModelS</a>

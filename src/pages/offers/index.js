@@ -1,7 +1,7 @@
 import React from 'react'
 import { Typography } from '@mui/material'
-import styled from "styled-components";
 import { TextField, Button } from "@mui/material";
+import { Container,InputsContainer, InputWrapper, ButtonContainer, ButtonGroup } from './offers.styled'
 
 const Offers = () => {
     return (
@@ -35,36 +35,4 @@ const Offers = () => {
       );
     }
     
-    const Container = styled.div`
-      display: flex;
-      flex-direction: column;
-      margin-top: 20px;
-    `;
-    
-    const InputsContainer = styled.div`
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      margin-bottom: 20px;
-    `;
-    
-    const InputWrapper = styled.div`
-      display: flex;
-      flex-direction: column;
-      width: 30%;
-    `;
-    
-    const ButtonContainer = styled.div`
-      display: flex;
-      justify-content: space-between; 
-      width: 100%;
-      `;
-      
-    const ButtonGroup = styled.div`
-      display: flex;
-      gap: 10;
-      width: 50%;
-    `
-    
-
-export default Offers
+    export default Offers

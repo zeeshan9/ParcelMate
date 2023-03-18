@@ -1,31 +1,37 @@
-import React, { useContext, useEffect, useMemo, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Typography } from '@mui/material';
 import Grid from '../../components/Grid';
 import { Container } from './inventory.styled';
 import useApi from '../../hooks/useApi';
 import AppContext from '../../contexts/appContext';
+import { getLocalData, isStrgEmpty, persistData, stringify } from '../../Util/utilities';
 
 const Inventory = () => {
-  // let [dataRows, setDataRows] = useState({});
   const { data, setData } = useContext(AppContext);
-  
   const { responseData, isLoading, error, fetchData } = useApi();
 
   useEffect(() => {
-    fetchData('https://mocki.io/v1/c9b9baf0-f111-43ec-acb6-90af3fe934a6');
+    if(isStrgEmpty()) {
+      console.log('api called 1')
+      fetchData('https://mocki.io/v1/c9b9baf0-f111-43ec-acb6-90af3fe934a6');
+    }
   }, [fetchData])
-    console.log('render')
-  // const memoizedGrid = useMemo(() => <Grid data={data} />, [data]);
 
   useEffect(() => {
-    const formatedData = responseData?.map(x => {
-              x.item.quantity = x.quantity
-              return x.item
-            })
-    if(responseData) {
-      setData((prevState) => ({...prevState, items: formatedData}))
-}
-      }, [responseData, setData])
+    if(isStrgEmpty()) {
+      const formatedData = responseData?.map(x => {
+        x.item.quantity = x.quantity
+        return x.item
+      })
+      console.log('api called 2', responseData?.length) 
+        persistData(formatedData);
+        if(formatedData) {
+          setData((prevState) => ({...prevState, items: formatedData}));
+        }
+    } else {
+      setData((prevState) => ({...prevState, items: getLocalData()?.items}));
+    }
+  }, [responseData, setData])
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -43,7 +49,5 @@ const Inventory = () => {
     </Container>
   )
 }
-
-
 
 export default Inventory;

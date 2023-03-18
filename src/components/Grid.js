@@ -1,7 +1,6 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React from 'react'
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { Button } from "@mui/material";
-import { useNavigate } from 'react-router-dom';
 
 const columns = [
   { field: "name", headerName: "Title", width: 350  },
@@ -13,7 +12,7 @@ const columns = [
     width: 250 ,
     renderCell: (params) => {
       const navigateToInventory = () => {
-        window.location.href = `update-inventory`///${params.id}
+        window.location.href = `update-inventory/${params.id}`
       };
       return (
         // eslint-disable-next-line no-undef
@@ -27,7 +26,7 @@ const columns = [
 
 
 const Grid = ({data}) => {
-  console.log(data.items)
+
   return (
     <div style={{ height: 670, width: "100%" }}>
       {data && data?.items &&

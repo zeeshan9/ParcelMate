@@ -5,10 +5,10 @@ import './App.css';
 import Header from "./components/Header";
 import { Dashboard } from "./pages/Dashboard";
 import Inventory from "./pages/inventory";
-import Offers from "./pages/Offers";
-import UpdateInventory from "./pages/UpdateInventory";
+import Offers from "./pages/offers";
 import './assets/css/variables.css'
 import AppContext from "./contexts/appContext";
+import UpdateInventory from "./pages/update-inventory";
 
 function App() {
   const [data, setData] = useState({});
@@ -31,7 +31,7 @@ function App() {
                   />
                   <Route
                     exact
-                    path="/update-inventory"
+                    path="/update-inventory/:itemId"
                     element={<UpdateInventory />}
                   />
                   <Route
