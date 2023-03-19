@@ -10,7 +10,7 @@ const useApi = () => {
       try {
           const response = await fetch(url, options);
           const json = await response.json();
-          setResponseData(json?.lines);
+          setResponseData(json);
         } catch (err) {
             setError(err);
         } finally {

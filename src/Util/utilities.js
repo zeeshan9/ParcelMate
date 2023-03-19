@@ -1,7 +1,7 @@
 import { constant } from "./constant"
 
 export const persistData = (dataObject) => {
-    localStorage.setItem(constant.localStorageKey, stringify({items: dataObject}));
+    localStorage.setItem(constant.localStorageKey, stringify(dataObject));
 }
 
 export const getLocalData = () => {
@@ -10,7 +10,15 @@ export const getLocalData = () => {
 
 export const isStrgEmpty = () => {
     if(getLocalData() && getLocalData()?.items && getLocalData()?.items.length > 0) {
-        return getLocalData()?.items.length === 0;
+        return false;
+    } else {
+        return true;
+    }
+}
+
+export const isOffersEmpty = () => {
+    if(getLocalData() && getLocalData()?.offers && getLocalData()?.offers.length > 0) {
+        return false;
     } else {
         return true;
     }

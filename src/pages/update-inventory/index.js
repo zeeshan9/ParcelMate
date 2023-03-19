@@ -24,6 +24,7 @@ const UpdateInventory = () => {
       setPrice(item[0].price);
     }
     // no need to pass the itemId here because on refresh mount happens again
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
   const handleSaveClick = () => {
@@ -52,7 +53,7 @@ const UpdateInventory = () => {
       return item;
     });
 
-    persistData(itemsData);
+    persistData({ ...getLocalData(), items: itemsData });
   };
 
   const handleCancelClick = () => {
@@ -61,7 +62,7 @@ const UpdateInventory = () => {
 
   const handleDeleteClick = () => {
     let itemsData = getLocalData().items.filter(x => x.id !== itemId);
-    persistData(itemsData);
+    persistData({...getLocalData(), items: itemsData});
   };
 
   const handleTitleBlur = () => {

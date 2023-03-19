@@ -1,15 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
-import Section from './Section';
+import Section from '../section.js';
+import { Container } from './home.styled'
 
 const Home = () => {
   return (
     <Container>
         <Section 
-          title="Model S"
+          title="Sada Parcel"
           backgroundImg="model-s.jpg"
           discription="Order Online for Touchless Drivery"
-          leftBtnText="offers"
+          leftBtnText="Discount Offers"
           rightBtnText="Existing Inventory"
         />
 
@@ -19,6 +19,3 @@ const Home = () => {
 
 export default Home
 
-const Container = styled.div`
-    height: 100vh;
-`

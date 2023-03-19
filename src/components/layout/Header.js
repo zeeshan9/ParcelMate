@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import sadapayLogo from '../assets/imgs/sadapay.png';
+import sadapayLogo from '../../assets/imgs/sadapay.png';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -15,13 +15,14 @@ const Header = () => {
       </Link>
       <Menu>
 
-            {/* <a href='#'>ModelS</a>
-            <a href='#'>ModelX</a>
-            <a href='#'>Model3</a> */}
+      <Link to="dashboard" activeClassName="active-link" >Dashbaord</Link>
+          <Link to="inventory" activeClassName="active-link" >Inventory</Link>
+          <Link to="offers" activeClassName="active-link" >Offers</Link>
       </Menu>
       <RightMenu>
           {/* <Link to="dashboard" activeClassName="active-link" >Dashbaord</Link>
-          <Link to="dashboard" activeClassName="active-link" >Inventory</Link> */}
+          <Link to="inventory" activeClassName="active-link" >Inventory</Link>
+          <Link to="offers" activeClassName="active-link" >Offers</Link> */}
           <CustomMenu onClick={() => setBurgerStatus(true)}/>
       </RightMenu>
       <BurgerNav show={burgerStatus}>
@@ -117,12 +118,3 @@ const CloseWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
 `
-
-// const Navigate = styled(Link)`
-//   color: var(--primary-color);
-//   text-decoration: none;
-//   &:hover {
-//     text-decoration: none;
-//     color: var(--dark-primary)
-//   }
-// `
