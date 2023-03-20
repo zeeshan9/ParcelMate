@@ -3,21 +3,26 @@ import styled from 'styled-components';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import sadapayLogo from '../../assets/imgs/sadapay.png';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
     const [burgerStatus, setBurgerStatus] = useState(false);
-
+    const location  = useLocation();
+    let url = location.pathname;
+    
     return (
     <Container>
       <Link to="dashboard">
         <Img src={sadapayLogo} alt='logo'/>
       </Link>
       <Menu>
-
-      <Link to="dashboard" activeClassName="active-link" >Dashbaord</Link>
-          <Link to="inventory" activeClassName="active-link" >Inventory</Link>
-          <Link to="offers" activeClassName="active-link" >Offers</Link>
+      {url !== '/dashboard' && <>
+          <Link to="dashboard" >Dashbaord</Link>
+          <Link to="inventory" >Inventory</Link>
+          <Link to="offers" >Offers</Link>
+      </>
+      }
+      
       </Menu>
       <RightMenu>
           {/* <Link to="dashboard" activeClassName="active-link" >Dashbaord</Link>

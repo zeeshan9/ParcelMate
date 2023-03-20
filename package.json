@@ -10,6 +10,8 @@
     "@mui/styled-engine-sc": "^5.8.0",
     "@mui/x-data-grid": "^5.17.26",
     "@mui/x-date-pickers": "^5.0.0-beta.3",
+    "@sentry/react": "^7.43.0",
+    "@sentry/tracing": "^7.43.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",

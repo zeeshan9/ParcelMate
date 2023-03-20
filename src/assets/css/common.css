@@ -1,0 +1,9 @@
+@import url('./variables.css');
+
+.white {
+    color: white;
+}
+
+.css-1knaqv7-MuiButtonBase-root-MuiButton-root {
+    color: var(--primary-color)!important;
+}

@@ -6,6 +6,7 @@ import AppContext from '../../contexts/appContext';
 import { getLocalData, isStrgEmpty, persistData } from '../../Util/utilities';
 import { Button } from "@mui/material";
 import Table from '../../components/common/table';
+import Loading from '../../components/ui/loading';
 
 const Inventory = () => {
   const { data, setData } = useContext(AppContext);
@@ -33,12 +34,13 @@ const Inventory = () => {
   }, [responseData, setData])
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Loading></Loading>;
   } 
       
   if (error) {
     return <p>Error: {error.message}</p>;
   }
+  
   return (
     <Container >
         <Typography variant="h4" gutterBottom>

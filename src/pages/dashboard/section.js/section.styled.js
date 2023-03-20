@@ -40,7 +40,7 @@ export const LeftButton = styled.div`
 
 // inheret all the styles of the LeftButton
 export const RightButton = styled(LeftButton)`
-    background-color: white;
+    background-color: gainsboro;
     opacity: 0.65;
     color: black;
 ` 

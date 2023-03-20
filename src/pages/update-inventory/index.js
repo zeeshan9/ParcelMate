@@ -34,11 +34,11 @@ const UpdateInventory = () => {
       setTitleError(true);
       isError = true;
     }
-    if (quantity.trim() === '' || quantity < 0) {
+    if (quantity < 0) {
       setQuantityError(true);
       isError = true;
     }
-    if (price.trim() === '' || price < 0) {
+    if (price < 0) {
       setPriceError(true);
       isError = true;
     }
@@ -52,7 +52,6 @@ const UpdateInventory = () => {
       }
       return item;
     });
-
     persistData({ ...getLocalData(), items: itemsData });
   };
 
@@ -74,7 +73,7 @@ const UpdateInventory = () => {
   };
 
   const handleQuantityBlur = () => {
-    if (quantity.trim() === '' || quantity < 0) {
+    if ( quantity < 0) {
       setQuantityError(true);
     } else {
       setQuantityError(false);
@@ -82,7 +81,7 @@ const UpdateInventory = () => {
   };
 
   const handlePriceBlur = () => {
-    if (price.trim() === '' || price < 0) {
+    if (price < 0) {
       setPriceError(true);
     } else {
       setPriceError(false);

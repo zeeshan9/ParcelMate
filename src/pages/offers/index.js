@@ -5,6 +5,7 @@ import { getLocalData, isOffersEmpty, persistData } from '../../Util/utilities';
 import { Container } from './offers.styled';
 import useApi from '../../hooks/useApi';
 import Table from '../../components/common/table';
+import Loading from '../../components/ui/loading';
 
 const Offers = () => {
   const { data, setData } = useContext(AppContext);
@@ -30,7 +31,7 @@ const Offers = () => {
   }, [responseData, setData])
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Loading></Loading>;
   } 
       
   if (error) {
