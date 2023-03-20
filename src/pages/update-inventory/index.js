@@ -53,6 +53,7 @@ const UpdateInventory = () => {
       return item;
     });
     persistData({ ...getLocalData(), items: itemsData });
+    navigate(constant.navigate.inventory);
   };
 
   const handleCancelClick = () => {

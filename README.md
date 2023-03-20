@@ -2,6 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Project Name: SadaPay
+
+### Getting Started
+To get started with the project, follow these steps:
+
+    - Clone the repository to your local machine.
+    - Run npm install to install dependencies.
+    - Run npm start to start the development server.
 ## Available Scripts
 
 In the project directory, you can run:
@@ -14,57 +22,86 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `npm run build`
-
-Builds the app for production to the `build` folder.\
+Build fiel is already create and can be used using `npm run serve` command
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Table of Contents
+    > Table of Contents
+    > Technologies Used
+    > Getting Started
+    > Folder Structure
+    > Button Loading Route
+    > Styling with MUI/Material-UI
+    > Generic Components
 
-### `npm run eject`
+### Technologies Used
+This project was built using the following technologies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    - React
+    - React Router
+    - Material-UI
+    - styled-components
+    - @mui/x-data-grid
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+###  `Here is the file Structure for this project`
+src/
+|-- `src/assets`: Contains images and styles used in the project.
+|   |-- `images`/
+|   |-- `styles`/
+|-- `components`/: Contains reusable components used throughout the project.
+|   |-- `common`/: 
+|   |-- `layout`/: Contains layout components that define the overall structure of each page.
+|   |-- `UI`/: Contains UI components that are specific to each page.
+|-- `contexts`/: Contains React contexts used in the project.
+|-- `hooks`/: Contains hooks used in the project.
+|-- `models`/: Contains models used in the project.
+|-- `pages`/: Contains React components that define the pages of the project.
+|-- `utils`/: Contains utility functions used in the project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Styling
+### Material-UI
+#### Styling with MUI/Material-UI
+The project uses the MUI/Material-UI library for styling. This provides a set of pre-built React components that can be customized using CSS-in-JS. The project also includes a custom theme that overrides some of the default styles.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Styled Components
 
-## Learn More
+Styled components are used for custom styles. This allows for more flexibility in styling and makes it easier to manage styles for specific components.
+## Generic Components
+To achieve reusability, generic components were created for common UI elements such as buttons, forms, and input fields. These components can be easily reused throughout the project by passing in props to customize their behavior and appearance.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Grid
+The Grid component is a custom component that uses Material-UI's Grid to display a grid of items. This component is used throughout the project to display various types of data.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Fallback and Loading
+### Fallback
+In case there are any errors while rendering the UI components, a fallback UI has been set up using the React Error Boundary component. This will display a friendly error message instead of crashing the app.
 
-### Code Splitting
+### Loading
+To provide a smooth user experience while data is being fetched, a loading spinner has been added to the UI. This spinner is displayed while data is being fetched from the server and disappears once the data has loaded.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Page Not Found
+a Page Not Found feature has been implemented to handle 404 errors. When a user navigates to a URL that does not exist, they will be redirected to a custom 404 page.
 
-### Analyzing the Bundle Size
+## Fake API
+As the actual API was not provided for this project, I created a fake API using the mock-api website. This allowed me to create a basic structure for the `API` using the `YAML` file that was provided.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The `mock API` was used to create temporary endpoints for testing purposes. To ensure data `persistence` between `sessions`, the fake API data was saved to local storage using the localStorage API.
 
-### Making a Progressive Web App
+## Observability
+## Sentry Integration
+Sentry has been integrated into the project for observability. This allows for logging, debugging, and performance monitoring. Sentry has been added to the project in the following ways:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    - index.js: Sentry has been initialized in the index.js file to catch any unhandled exceptions.
+    - App.js: A Sentry ErrorBoundary has been added to catch errors in React components.
+    - package.json: The @sentry/react and @sentry/tracing packages have been added as dependencies.
+### Benefits of Sentry
+    * Provides real-time error tracking and alerts
+    * Provides performance monitoring and analytics
+    * Integrates with various platforms and services
+    * Offers powerful debugging tools
+    * Helps improve the quality and reliability of the project
